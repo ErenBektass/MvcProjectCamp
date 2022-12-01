@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,10 @@ namespace Project.ENTITIES.Models
 {
     public class Heading
     {
+        
         public int HeadingID { get; set; }
+
+        [StringLength(50)]
         public string HeadingName { get; set; }
         public DateTime HeadingDate { get; set; }
         public int CategoryID { get; set; }
@@ -18,7 +22,7 @@ namespace Project.ENTITIES.Models
         //Relational Properties
         public virtual Writer Writer { get; set; }
         public virtual Category Category { get; set; }
-        public List<Contact> Contacts { get; set; }
+        public List<Content> Contents { get; set; }
 
     }
 }
