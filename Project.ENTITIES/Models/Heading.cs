@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Heading
+    public class Heading:BaseEntity
     {
         
         public int HeadingID { get; set; }
 
         [StringLength(50)]
-        public string HeadingName { get; set; }
-        public DateTime HeadingDate { get; set; }
+        public string HeadingName { get; set; }       
         public int CategoryID { get; set; }
         public int WriterID { get; set; }
 

@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Writer
+    public class Writer:BaseEntity
     {
         
-        public int YazarID { get; set; }
+        public int WriterID { get; set; }
 
         [StringLength(50)]
         public string WriterName { get; set; }

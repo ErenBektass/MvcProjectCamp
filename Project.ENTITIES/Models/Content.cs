@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Content
+    public class Content:BaseEntity
     {
         
         public int ContentID { get; set; }
@@ -16,7 +16,7 @@ namespace Project.ENTITIES.Models
 
         [StringLength(1000)]
         public string ContentValue { get; set; }
-        public DateTime ContentDate { get; set; }
+        
 
         //Relational Properties        
         public virtual Heading Heading { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class Contact
+    public class Contact:BaseEntity
     {
         
         public int ContactID { get; set; }

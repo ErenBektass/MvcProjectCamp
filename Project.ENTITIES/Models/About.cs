@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Project.ENTITIES.Models
 {
-    public class About
+    public class About:BaseEntity
     {
         
         public int AboutID { get; set; }
