@@ -12,14 +12,13 @@ namespace Project.ENTITIES.Models
         
         public int ContentID { get; set; }
         public int HeadingID { get; set; }
-        public int WriterID { get; set; }
+        
 
         [StringLength(1000)]
         public string ContentValue { get; set; }
-        
+
 
         //Relational Properties        
-        public virtual Heading Heading { get; set; }
         public virtual Writer Writer { get; set; }
 
 

@@ -24,4 +24,4 @@ namespace Project.ENTITIES.Models
         public List<Content> Contents { get; set; }
 
     }
-}
+}   

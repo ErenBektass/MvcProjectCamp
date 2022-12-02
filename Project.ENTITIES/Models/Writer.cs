@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -30,6 +30,6 @@ namespace Project.ENTITIES.Models
         //Relational Properties
 
         public List<Heading> Headings { get; set; }
-        public List<Content> Contents { get; set; }
+        
     }
 }
