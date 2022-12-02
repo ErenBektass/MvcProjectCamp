@@ -11,7 +11,7 @@ namespace Project.ENTITIES.Models
     {
         
         public int ContentID { get; set; }
-        public int HeadingID { get; set; }
+        public int HeadingID { get; set; } 
         
 
         [StringLength(1000)]
