@@ -30,6 +30,6 @@ namespace Project.ENTITIES.Models
         //Relational Properties
 
         public List<Heading> Headings { get; set; }
-        public List<Content> Contents { get; set; }
+        
     }
 }

@@ -15,7 +15,7 @@ namespace Project.ENTITIES.Models
         [StringLength(50)]
         public string HeadingName { get; set; }       
         public int CategoryID { get; set; }
-        public int WriterID { get; set; }
+        
 
 
         //Relational Properties
