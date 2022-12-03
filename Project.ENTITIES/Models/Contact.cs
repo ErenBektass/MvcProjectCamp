@@ -21,12 +21,11 @@ namespace Project.ENTITIES.Models
         [StringLength(50)]
         public string Subject { get; set; }
 
-        [StringLength(1000)]
+        
         public string Message { get; set; }
 
         //Relational Properties
-        public int HeadingID { get; set; }
-        public virtual Heading Heading { get; set; }
+       
 
     }
 }

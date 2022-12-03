@@ -15,7 +15,7 @@ namespace Project.ENTITIES.Models
         
         [StringLength(1000)]
         public string ContentValue { get; set; }
-        
+
 
         //Relational Properties        
         public virtual Heading Heading { get; set; }
