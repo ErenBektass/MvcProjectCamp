@@ -44,7 +44,7 @@ namespace Project.BLL.DesignPatterns.GenericRepository.BaseRep
 
         public void Delete(T item)
         {
-            item.DeletedDate = DateTime.Now;
+            item.ModifiedDate = DateTime.Now;
             item.Status = ENTITIES.Enums.DataStatus.Deleted;
             Save();
         }

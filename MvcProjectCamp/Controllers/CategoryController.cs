@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MvcProjectCamp.VMClasses;
+using Project.BLL.DesignPatterns.GenericRepository.ConcRep;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +10,27 @@ namespace MvcProjectCamp.Controllers
 {
     public class CategoryController : Controller
     {
-        // GET: Category
+        
+        CategoryRepository _cRep;
+
+        public CategoryController()
+        {
+            _cRep=new CategoryRepository();
+        }
+
         public ActionResult Index()
         {
             return View();
+        }
+        // GET: Category
+        public ActionResult GetCategoryList()
+        {
+            CategoryVM cvm = new CategoryVM
+            {
+                Categories = _cRep.GetActives()
+            };
+            return View(cvm);
+
         }
     }
 }
