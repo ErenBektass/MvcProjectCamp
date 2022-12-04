@@ -1,5 +1,6 @@
 ﻿using MvcProjectCamp.VMClasses;
 using Project.BLL.DesignPatterns.GenericRepository.ConcRep;
+using Project.ENTITIES.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,5 +33,16 @@ namespace MvcProjectCamp.Controllers
             return View(cvm);
 
         }
+        public ActionResult AddCategory()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddCategory(Category category)
+        {
+            return View();
+        }
+        
     }
+    
 }
