@@ -39,92 +39,102 @@ namespace Project.BLL.DesignPatterns.GenericRepository.BaseRep
 
         public bool Any(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return  _db.Set<T>().Any(exp);
         }
 
         public void Delete(T item)
         {
-            throw new NotImplementedException();
+            item.DeletedDate = DateTime.Now;
+            item.Status = ENTITIES.Enums.DataStatus.Deleted;
+            Save();
         }
 
         public void DeleteRange(List<T> list)
         {
-            throw new NotImplementedException();
+            foreach (T item in list)
+            {
+                Delete(item);
+            }
         }
 
         public void Destroy(T item)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().Remove(item);
+            Save();
         }
 
         public void DestroyRange(List<T> list)
         {
-            throw new NotImplementedException();
+            _db.Set<T>().RemoveRange(list);
+            Save();
         }
 
         public T Find(int id)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Find(id);
         }
 
         public T FirstOfDefault(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().FirstOrDefault(exp);
         }
 
         public List<T> GetActives()
         {
-            throw new NotImplementedException();
+            return Where(x => x.Status != ENTITIES.Enums.DataStatus.Deleted);
         }
 
         public List<T> GetAll()
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().ToList();
         }
 
-        public List<T> GetFirstDatas(int numbere)
+        public List<T> GetFirstDatas(int number)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().OrderBy(x => x.CreatedDate).Take(number).ToList();
         }
 
-        public List<T> GetLastDatas(int numbere)
+        public List<T> GetLastDatas(int number)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().OrderByDescending(x => x.CreatedDate).Take(number).ToList();
         }
 
         public List<T> GetPassives()
         {
-            throw new NotImplementedException();
+            return Where(x => x.Status == ENTITIES.Enums.DataStatus.Updated);
         }
 
         public List<T> GetUpdateds()
         {
-            throw new NotImplementedException();
+            return Where(x => x.Status == ENTITIES.Enums.DataStatus.Updated);
         }
 
         public object Select(Expression<Func<T, object>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Select(exp);
         }
 
         public IQueryable<X> SelectViaClass<X>(Expression<Func<T, X>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Select(exp);
         }
 
         public void Update(T item)
         {
-            throw new NotImplementedException();
+            item.Status = ENTITIES.Enums.DataStatus.Updated;
         }
 
         public void UpdateRange(List<T> list)
         {
-            throw new NotImplementedException();
+            foreach (T item in list)
+            {
+                Update(item);
+            }
         }
 
         public List<T> Where(Expression<Func<T, bool>> exp)
         {
-            throw new NotImplementedException();
+            return _db.Set<T>().Where(exp).ToList();
         }
     }
 }
