@@ -24,7 +24,7 @@ namespace Project.ENTITIES.Models
         
         public string Message { get; set; }
 
-        //Relational Properties
+       
        
 
     }

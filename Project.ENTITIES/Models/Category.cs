@@ -18,7 +18,6 @@ namespace Project.ENTITIES.Models
         [StringLength(200)]
         public string Description { get; set; }
 
-
         public bool CategoryStatus { get; set; }
 
         //Relational Properties
