@@ -18,7 +18,7 @@ namespace MvcProjectCamp.Controllers
             _cRep=new CategoryRepository();
         }
 
-        public ActionResult Index()
+        public ActionResult Index() 
         {
             return View();
         }
