@@ -33,10 +33,20 @@ namespace MvcProjectCamp.Controllers
             return View(cvm);
 
         }
+        
+
+
+        [HttpPost]
         public ActionResult AddCategory()
         {
-            return View();
+            Category newcategory=new Category();
+            newcategory.CategoryName = "";
+            newcategory.Description = "";
+            newcategory.CategoryStatus = true;
+            _cRep.Add(newcategory);
+            return RedirectToAction("GetCategoryList");
         }
+        
         [HttpPost]
         public ActionResult AddCategory(Category category)
         {
